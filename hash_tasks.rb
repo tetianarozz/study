@@ -1,9 +1,29 @@
 #1
 # {hash = {num: 1, color: "blue", weight: 50}
 # 1. add to hash new key "hight" with value 100
+hash = {num: 1, color: "blue", weight: 50}
+hash[:hight] = 100
+
+puts hash.inspect
+
 # 2. change value key num from 1 to 3
+hash = {num: 1, color: "blue", weight: 50}
+hash[:num] = 3
+
+puts hash.inspect
+
 # 3. move key and value color from current hash to new
-# 4. add to current hash other hash hash2 = {num2: 4, weight: 100, hight: 150}}
+hash = {num: 1, color: "blue", weight: 50}
+new_hash = {}
+new_hash[:color] = hash.delete(:color)
+
+puts new_hash.inspect
+
+# 4. add to current hash other hash hash2 = {num2: 4, weight: 100, hight: 150}
+hash = {num: 1, color: "blue", weight: 50}
+hash2 = {num2: 4, weight: 100, hight: 150}
+
+puts hash.merge(hash2).inspect
 
 # 2
 # You have two hashes ab = {a: 1, b: 2} and cd = {c: 3, d: 4}
