@@ -40,7 +40,15 @@ puts abcd.inspect
 # 3
 # { foo: 0, bar: 1, baz: 2 }
 # 1. Create new arr from hash keys
+hash = { foo: 0, bar: 1, baz: 2 }
+
+puts hash.keys.inspect
+
 # 2. Create new arr from hash values
+hash = { foo: 0, bar: 1, baz: 2 }
+
+puts hash.values.inspect
+
 # 3. Create new sting with structure "keys: keys from hash; values: values from hash"
 # 4. Return sum all values of hash
 
