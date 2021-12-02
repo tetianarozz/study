@@ -50,11 +50,53 @@ hash = { foo: 0, bar: 1, baz: 2 }
 puts hash.values.inspect
 
 # 3. Create new sting with structure "keys: keys from hash; values: values from hash"
+hash = { foo: 0, bar: 1, baz: 2 }
+
+hash.each_pair {|key, value| puts "keys: #{key}; values: #{value}"}
+
 # 4. Return sum all values of hash
+hash = { foo: 0, bar: 1, baz: 2 }
+
+puts hash.values.sum.inspect
 
 # 4
+#
 # [{num: 1}, {num: 1}, {num: 2}, {num: 3}, {num: 4}, {num: 5}]
 # 1. Return new arr with uniq values of hashes
+hash = [{num: 1}, {num: 1}, {num: 2}, {num: 3}, {num: 4}, {num: 5}]
+arr = []
+
+hash.each do |hash_el|
+  hash_el.each_value do |value|
+    arr << value
+  end
+end
+puts arr.uniq.inspect
+
 # 2. Change all values in hashes on value+1 if value < 3
+hash = [{num: 1}, {num: 1}, {num: 2}, {num: 3}, {num: 4}, {num: 5}]
+
+hash.map! do |hash_el|
+  key = hash_el.keys.first
+  value = hash_el.values.first
+
+  value += 1 if value < 3
+
+  {"#{key}": value}
+end
+
+puts hash.inspect
+
 # 3. Return new arr with keys of hash where keys should be key + value of key hash.
 # - for example [{a: b1}, {a: b2}] must return ["ab1", "ab2"]
+arr = [{a: "b1"}, {a: "b2"}]
+new_arr = []
+
+arr.each do |hash|
+  hash.each_pair do |key, value|
+    new_arr << "#{key}#{value}"
+
+  end
+end
+
+puts new_arr.inspect
