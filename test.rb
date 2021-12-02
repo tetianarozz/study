@@ -1,4 +1,8 @@
-hash = {num: 1, color: "blue", weight: 50}
-hash2 = {num2: 4, weight: 100, hight: 150}
+ab = {a: 1, b: 2}
+cd = {c: 3, d: 4}
 
-puts hash.merge(hash2).inspect
+abcd = ab.merge(cd)
+
+abcd.delete_if {|key, value| value < 2 }
+
+puts abcd.inspect

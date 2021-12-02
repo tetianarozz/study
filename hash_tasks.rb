@@ -28,6 +28,14 @@ puts hash.merge(hash2).inspect
 # 2
 # You have two hashes ab = {a: 1, b: 2} and cd = {c: 3, d: 4}
 # 1. Make the new hash from ab and cd where value should be more than 2
+ab = {a: 1, b: 2}
+cd = {c: 3, d: 4}
+
+abcd = ab.merge(cd)
+
+abcd.delete_if {|key, value| value < 2 }
+
+puts abcd.inspect
 
 # 3
 # { foo: 0, bar: 1, baz: 2 }
