@@ -1,9 +1,5 @@
-require './chameleon.rb'
+require_relative "chameleon"
 
 hameleon = Chameleon.new
 
-hameleon.change_color
-
-hameleon.change_color
-
-hameleon.change_color
+3.times { hameleon.change_color }
