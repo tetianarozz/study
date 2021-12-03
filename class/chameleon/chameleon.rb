@@ -1,5 +1,4 @@
-class Hameleon
-
+class Chameleon
   def initialize
     puts "Хамелеон створений :)"
     @color = [
@@ -9,11 +8,10 @@ class Hameleon
       "блакитний",
       "жовтий"
     ]
-
   end
 
   def change_color
     puts "Тепер я #{@color.sample} !"
+    sleep 1
   end
-
 end
