@@ -95,7 +95,6 @@ new_arr = []
 arr.each do |hash|
   hash.each_pair do |key, value|
     new_arr << "#{key}#{value}"
-
   end
 end
 
