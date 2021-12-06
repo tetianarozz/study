@@ -10,7 +10,6 @@ class Person
       puts "#{@name} #{@second_name}"
     else
       puts "#{@name}"
-
     end
   end
 
