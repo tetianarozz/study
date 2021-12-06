@@ -1,5 +1,5 @@
 #1
-# {hash = {num: 1, color: "blue", weight: 50}
+# hash = {num: 1, color: "blue", weight: 50}
 # 1. add to hash new key "hight" with value 100
 hash = {num: 1, color: "blue", weight: 50}
 hash[:hight] = 100
@@ -63,29 +63,29 @@ puts hash.values.sum.inspect
 #
 # [{num: 1}, {num: 1}, {num: 2}, {num: 3}, {num: 4}, {num: 5}]
 # 1. Return new arr with uniq values of hashes
-hash = [{num: 1}, {num: 1}, {num: 2}, {num: 3}, {num: 4}, {num: 5}]
-arr = []
+arr = [{num: 1}, {num: 1}, {num: 2}, {num: 3}, {num: 4}, {num: 5}]
+new_arr = []
 
-hash.each do |hash_el|
-  hash_el.each_value do |value|
-    arr << value
+arr.each do |hash|
+  hash.each_value do |value|
+    new_arr << value
   end
 end
-puts arr.uniq.inspect
+puts new_arr.uniq.inspect
 
 # 2. Change all values in hashes on value+1 if value < 3
-hash = [{num: 1}, {num: 1}, {num: 2}, {num: 3}, {num: 4}, {num: 5}]
+arr = [{num: 1}, {num: 1}, {num: 2}, {num: 3}, {num: 4}, {num: 5}]
 
-hash.map! do |hash_el|
-  key = hash_el.keys.first
-  value = hash_el.values.first
+arr.map! do |hash|
+  key = hash.keys.first
+  value = hash.values.first
 
   value += 1 if value < 3
 
   {"#{key}": value}
 end
 
-puts hash.inspect
+puts arr.inspect
 
 # 3. Return new arr with keys of hash where keys should be key + value of key hash.
 # - for example [{a: b1}, {a: b2}] must return ["ab1", "ab2"]
