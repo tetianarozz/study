@@ -1,8 +1,8 @@
 class Person
-  def initialize(person_name, person_second_name, person_age)
-    @name = person_name
-    @second_name = person_second_name
-    @age = person_age
+  def initialize(name, second_name, age)
+    @name = name
+    @second_name = second_name
+    @age = age
   end
 
   def full_name
