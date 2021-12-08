@@ -7,11 +7,11 @@ class Bodybuilder
 
   def pump(muscle)
     case muscle
-    when 'triceps'
+    when "biceps"
       @biceps += 1
-    when 'biceps'
+    when "triceps"
       @triceps += 1
-    when 'deltovidka'
+    when "deltoid"
       @deltoid += 1
     end
   end
@@ -19,6 +19,6 @@ class Bodybuilder
   def show_body
     puts "Біцепси: #{@biceps}"
     puts "Трицепси: #{@triceps}"
-    puts "Дельтовидка: #{@deltoid}"
+    puts "Дельтовидка: #{@deltoid} \n "
   end
 end
