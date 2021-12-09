@@ -32,7 +32,7 @@ class ResultPrinter
       end
     end
 
-    return result
+    result
   end
 
   def cls
