@@ -49,16 +49,38 @@ class Tamagotchi
 
     case action
     when 1
-      @health += 10
+      @health += 30
+      @joyfulness -= 10
+      @cheerfulness -= 10
+      @satiety -= 10
+      @hygiene -= 10
     when 2
-      @joyfulness += 10
+      @joyfulness += 30
+      @health -= 10
+      @cheerfulness -= 10
+      @satiety -= 10
+      @hygiene -= 10
     when 3
-      @cheerfulness += 10
+      @cheerfulness += 30
+      @health -= 10
+      @joyfulness -= 10
+      @satiety -= 10
+      @hygiene -= 10
     when 4
-      @satiety += 10
+      @satiety += 30
+      @health -= 10
+      @joyfulness -= 10
+      @cheerfulness -= 10
+      @hygiene -= 10
     when 5
-      @hygiene += 10
+      @hygiene += 30
+      @health -= 10
+      @joyfulness -= 10
+      @cheerfulness -= 10
+      @satiety -= 10
     end
+
+    @age += 1
   end
 
   def cls
