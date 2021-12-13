@@ -26,6 +26,39 @@ class Tamagotchi
      Ситість: #{@satiety}
      Гігієна: #{@hygiene}
      \nВік вихованця: #{@age} день"
+
+    puts "\nДля виходу зі статистики натисніть 1"
+    number = gets.to_i
+
+    until number == 1 do
+      puts "Для виходу зі статистики натисніть 1"
+      number = gets.to_i
+    end
+  end
+
+  def choose_action
+    cls
+    puts "\nОберіть дію для #{@name.capitalize}:
+    1. Лікувати
+    2. Грати
+    3. Вкласти спати
+    4. Годувати
+    5. Купати"
+
+    action = gets.to_i
+
+    case action
+    when 1
+      @health += 10
+    when 2
+      @joyfulness += 10
+    when 3
+      @cheerfulness += 10
+    when 4
+      @satiety += 10
+    when 5
+      @hygiene += 10
+    end
   end
 
   def cls

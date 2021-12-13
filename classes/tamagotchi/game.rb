@@ -6,3 +6,8 @@ pet.get_name
 
 pet.show_statistics
 
+pet.choose_action
+
+pet.show_statistics
+
+
