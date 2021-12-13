@@ -16,15 +16,16 @@ class Tamagotchi
 
   def show_statistics
     cls
+
     puts "Вихованець: #{@name.capitalize}
-         ｡◕‿◕｡ "
-    puts "\nПоказники:"
-    puts "Здоров'я: #{@health}"
-    puts "Радість: #{@joyfulness}"
-    puts "Ситість: #{@satiety}"
-    puts "Гігієна: #{@hygiene}"
-    puts "Бадьорість: #{@cheerfulness}"
-    puts "\nВік вихованця: #{@age} день"
+         \n           ｡◕‿◕｡
+      \nПоказники:
+      Здоров'я: #{@health}
+      Радість: #{@joyfulness}
+      Ситість: #{@satiety}
+      Гігієна: #{@hygiene}
+      Бадьорість: #{@cheerfulness}
+      \nВік вихованця: #{@age} день"
   end
 
   def cls
