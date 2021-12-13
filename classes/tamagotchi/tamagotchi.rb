@@ -1,11 +1,11 @@
 class Tamagotchi
-  def initialize
+  def initialize(health, joyfulness, satiety, hygiene, cheerfulness)
     @name = nil
-    @health = 100
-    @joyfulness = 100
-    @satiety = 100
-    @hygiene = 100
-    @cheerfulness = 100
+    @health = health
+    @joyfulness = joyfulness
+    @satiety = satiety
+    @hygiene = hygiene
+    @cheerfulness = cheerfulness
     @age = 1
   end
 
@@ -16,7 +16,8 @@ class Tamagotchi
 
   def show_statistics
     cls
-    puts "Вихованець: #{@name.capitalize}"
+    puts "Вихованець: #{@name.capitalize}
+         ｡◕‿◕｡ "
     puts "\nПоказники:"
     puts "Здоров'я: #{@health}"
     puts "Радість: #{@joyfulness}"
