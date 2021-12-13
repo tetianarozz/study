@@ -19,13 +19,13 @@ class Tamagotchi
 
     puts "Вихованець: #{@name.capitalize}
          \n           ｡◕‿◕｡
-      \nПоказники:
-      Здоров'я: #{@health}
-      Радість: #{@joyfulness}
-      Ситість: #{@satiety}
-      Гігієна: #{@hygiene}
-      Бадьорість: #{@cheerfulness}
-      \nВік вихованця: #{@age} день"
+     \nПоказники:
+     Здоров'я: #{@health}
+     Радість: #{@joyfulness}
+     Бадьорість: #{@cheerfulness}
+     Ситість: #{@satiety}
+     Гігієна: #{@hygiene}
+     \nВік вихованця: #{@age} день"
   end
 
   def cls
