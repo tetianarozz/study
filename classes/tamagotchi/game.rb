@@ -56,4 +56,3 @@ class Game
     put_number
   end
 end
-
