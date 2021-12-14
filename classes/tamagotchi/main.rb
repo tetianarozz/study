@@ -1,15 +1,14 @@
 require_relative 'tamagotchi'
-require_relative 'game'
-action = nil
+
+choise = nil
 
 puts "Введіть ім'я Вашого вихованця:"
 name = gets.chomp
 
-pet = Tamagotchi.new(name, 100, 100, 100, 100, 100)
+pet = Tamagotchi.new(name, 100, 100, 100, 100, 100, 1)
 
-def choose_action
-  pet_name = name.capitalize
-  puts "Оберіть дію для #{pet_name}:
+def choose_action(name, choise)
+  puts "Оберіть дію для #{name.capitalize}:
         \n           ｡◕‿◕｡\n
    1. Лікувати
    2. Грати
@@ -18,16 +17,22 @@ def choose_action
    5. Купати
    6. Відправити на прогулянку одного"
 
-  action = gets.to_i
+  choise = gets.to_i
+
+  return choise
 end
 
 pet.show_statistics
 
-choose_action
-
-result
-
-pet.show_statistics
 
 
+while pet.health  > 0 || pet.joyfulness > 0 || pet.satiety > 0 || pet.hygiene > 0 || pet.cheerfulness > 0 || pet.age > 10 do
+  choose_action(name, choise)
+
+  pet.result(choise)
+
+  pet.show_statistics
+end
+
+explain_death
 
