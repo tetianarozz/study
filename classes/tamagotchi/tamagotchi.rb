@@ -1,3 +1,5 @@
+require_relative 'helper'
+
 class Tamagotchi
   attr_accessor :name, :health, :joyfulness, :satiety, :hygiene, :cheerfulness, :age
 
