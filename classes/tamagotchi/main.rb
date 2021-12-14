@@ -24,8 +24,6 @@ end
 
 pet.show_statistics
 
-
-
 while pet.health  > 0 || pet.joyfulness > 0 || pet.satiety > 0 || pet.hygiene > 0 || pet.cheerfulness > 0 || pet.age > 10 do
   choose_action(name, choise)
 

@@ -1,8 +1,9 @@
-ab = {a: 1, b: 2}
-cd = {c: 3, d: 4}
+arr = [{num: 1}, {num: 1}, {num: 2}, {num: 3}, {num: 4}, {num: 5}]
+new_arr = []
 
-abcd = ab.merge(cd)
-
-abcd.delete_if {|key, value| value < 2 }
-
-puts abcd.inspect
+arr.each do |hash|
+  hash.each_value do |value|
+    new_arr << value
+  end
+end
+puts new_arr.uniq.inspect
