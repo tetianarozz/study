@@ -1,5 +1,5 @@
 class Tamagotchi
-  attr_accessor :name, :health, :joyfulness, :satiety, :hygiene, :cheerfulness
+  attr_accessor :name, :health, :joyfulness, :satiety, :hygiene, :cheerfulness, :age
 
   def initialize(name, health, joyfulness, satiety, hygiene, cheerfulness, age)
     @name = name
@@ -76,19 +76,19 @@ class Tamagotchi
   end
 
   def explain_death
-    if @health <= 0
+    if health <= 0
       abort "#{name.capitalize} помер від хронічних хвороб :("
-    elsif @joyfulness <= 0
+    elsif joyfulness <= 0
       abort "#{name.capitalize} втік до інших господарів від нудьги :("
-    elsif @satiety <= 0
+    elsif satiety <= 0
       abort "#{name.capitalize} помер з голоду :("
-    elsif @hygiene <= 0
+    elsif hygiene <= 0
       abort "Через неналежний догляд за #{name.capitalize} (відсутність гігієни)
           його забрала інспекція по нагляду за неповнолітніми тамагочі :("
-    elsif @cheerfulness <= 0
+    elsif cheerfulness <= 0
       abort "Від недостачі сну #{name.capitalize} збожеволів і проведе
             решту днів у психлікарні :("
-    elsif @age > 10
+    elsif age > 10
       abort "#{name.capitalize} помер від старості :("
     else
       abort "#{name.capitalize} помер з невідомих причин :("
@@ -107,5 +107,9 @@ class Tamagotchi
       puts "Грати далі - натисніть 1"
       number = gets.to_i
     end
+  end
+
+  def live?
+    health  > 0 && joyfulness > 0 && satiety > 0 && hygiene > 0 && cheerfulness > 0 && age > 10
   end
 end
