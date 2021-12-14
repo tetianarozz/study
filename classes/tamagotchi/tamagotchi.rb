@@ -1,6 +1,8 @@
 class Tamagotchi
-  def initialize(health, joyfulness, satiety, hygiene, cheerfulness)
-    @name = nil
+  attr_accessor :name, :health, :joyfulness, :satiety, :hygiene, :cheerfulness
+
+  def initialize(name, health, joyfulness, satiety, hygiene, cheerfulness)
+    @name = name
     @health = health
     @joyfulness = joyfulness
     @satiety = satiety
@@ -9,81 +11,33 @@ class Tamagotchi
     @age = 1
   end
 
-  def get_name
-    puts "Введіть ім'я Вашого вихованця:"
-    @name = gets.chomp
-  end
-
   def show_statistics
     cls
 
-    puts "Вихованець: #{@name.capitalize}
-         \n           ｡◕‿◕｡
-     \nПоказники:
-     Здоров'я: #{@health}
-     Радість: #{@joyfulness}
-     Бадьорість: #{@cheerfulness}
-     Ситість: #{@satiety}
-     Гігієна: #{@hygiene}
+    puts "Вихованець: #{name.capitalize}
+         \n           ｡◕‿◕｡\n
+     Показники:
+     Здоров'я: #{health}
+     Радість: #{joyfulness}
+     Бадьорість: #{cheerfulness}
+     Ситість: #{satiety}
+     Гігієна: #{hygiene}
      \nВік вихованця: #{@age} день"
 
-    puts "\nДля виходу зі статистики натисніть 1"
-    number = gets.to_i
-
-    until number == 1 do
-      puts "Для виходу зі статистики натисніть 1"
-      number = gets.to_i
-    end
-  end
-
-  def choose_action
-    cls
-    puts "\nОберіть дію для #{@name.capitalize}:
-    1. Лікувати
-    2. Грати
-    3. Вкласти спати
-    4. Годувати
-    5. Купати"
-
-    action = gets.to_i
-
-    case action
-    when 1
-      @health += 30
-      @joyfulness -= 10
-      @cheerfulness -= 10
-      @satiety -= 10
-      @hygiene -= 10
-    when 2
-      @joyfulness += 30
-      @health -= 10
-      @cheerfulness -= 10
-      @satiety -= 10
-      @hygiene -= 10
-    when 3
-      @cheerfulness += 30
-      @health -= 10
-      @joyfulness -= 10
-      @satiety -= 10
-      @hygiene -= 10
-    when 4
-      @satiety += 30
-      @health -= 10
-      @joyfulness -= 10
-      @cheerfulness -= 10
-      @hygiene -= 10
-    when 5
-      @hygiene += 30
-      @health -= 10
-      @joyfulness -= 10
-      @cheerfulness -= 10
-      @satiety -= 10
-    end
-
-    @age += 1
+    put_number
   end
 
   def cls
     system('clear') || system('cls')
+  end
+
+  def put_number
+    puts "\nГрати далі - натисніть 1"
+    number = gets.to_i
+
+    until number == 1 do
+      puts "Грати далі - натисніть 1"
+      number = gets.to_i
+    end
   end
 end
