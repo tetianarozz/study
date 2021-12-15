@@ -26,10 +26,9 @@ class Tamagotchi
      Гігієна: #{hygiene}
      \nВік вихованця: #{@age} день"
 
-    put_number
   end
 
-  def result(choise)
+  def update(choise)
     case choise
     when 1 #Лікувати
       @health = 100
@@ -73,7 +72,7 @@ class Tamagotchi
       @cheerfulness -= 50
       @age += 1
     else
-      puts " error"
+      puts "error"
     end
   end
 
@@ -101,17 +100,7 @@ class Tamagotchi
     system('clear') || system('cls')
   end
 
-  def put_number
-    puts "\nГрати далі - натисніть 1"
-    number = gets.to_i
-
-    until number == 1 do
-      puts "Грати далі - натисніть 1"
-      number = gets.to_i
-    end
-  end
-
   def live?
-    health  > 0 && joyfulness > 0 && satiety > 0 && hygiene > 0 && cheerfulness > 0 && age > 10
+    health  > 0 && joyfulness > 0 && satiety > 0 && hygiene > 0 && cheerfulness > 0 && age < 10
   end
 end

@@ -1,4 +1,5 @@
 require_relative 'helper'
+require_relative 'tamagotchi'
 
 class Game
   include Helper
