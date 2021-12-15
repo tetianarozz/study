@@ -96,10 +96,6 @@ class Tamagotchi
     end
   end
 
-  def cls
-    system('clear') || system('cls')
-  end
-
   def live?
     health  > 0 && joyfulness > 0 && satiety > 0 && hygiene > 0 && cheerfulness > 0 && age < 10
   end
