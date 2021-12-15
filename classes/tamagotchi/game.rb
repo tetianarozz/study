@@ -10,6 +10,40 @@ class Game
     @pet = pet
   end
 
+  def ask_level(index)
+    puts "Вітаємо у грі Тамагочі!
+      \nОберіть рівень складності гри: \n
+      1. Легкий
+      2. Середній
+      3. Важкий "
+
+    number = gets.to_i
+
+    until number.between?(1,3) do
+      cls
+
+      puts "Вітаємо у грі Тамагочі!
+      \nОберіть рівень складності гри:
+      \n1. Легкий
+      2. Середній
+      3. Важкий "
+
+      number = gets.to_i
+    end
+
+    case number
+    when 1
+      index = 5
+    when 2
+      index = 10
+    when 3
+      index = 15
+    else
+      puts "error"
+    end
+    index
+  end
+
   def start
     show_stats
 

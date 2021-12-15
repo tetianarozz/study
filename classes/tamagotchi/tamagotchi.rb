@@ -1,4 +1,5 @@
 require_relative 'helper'
+require_relative 'game'
 
 class Tamagotchi
   include Helper
@@ -34,10 +35,10 @@ class Tamagotchi
     case choise
     when 1 #Лікувати
       @health = 100
-      @joyfulness -= 10
-      @cheerfulness -= 10
-      @satiety -= 10
-      @hygiene -= 10
+      @joyfulness -= (10 - index)
+      @cheerfulness -= (10 - index)
+      @satiety -= (10 - index)
+      @hygiene -= (10 - index)
       @age += 1
     when 2 #Грати
       @joyfulness = 100

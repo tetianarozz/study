@@ -1,6 +1,8 @@
 require_relative 'tamagotchi'
 require_relative 'game'
 
+Game.new(nil).ask_level(nil)
+
 puts "Введіть ім'я Вашого вихованця:"
 name = gets.chomp
 
