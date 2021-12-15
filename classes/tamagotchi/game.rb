@@ -43,14 +43,9 @@ class Game
   end
 
   def put_number
-    puts "\nГрати далі - натисніть 1"
-    number = gets.to_i
-
-    while number != 1 do
-      puts "Грати далі - натисніть 1"
-      number = gets.to_i
-    end
-  end
+    puts "\nПродовжити гру - натисніть 'Enter'"
+    gets.to_i
+ end
 
   def show_stats
     pet.show_statistics
