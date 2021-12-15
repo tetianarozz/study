@@ -1,6 +1,7 @@
 require_relative 'helper'
 
 class Tamagotchi
+  include Helper
   attr_accessor :name, :health, :joyfulness, :satiety, :hygiene, :cheerfulness, :age
 
   def initialize(name, health, joyfulness, satiety, hygiene, cheerfulness, age)
