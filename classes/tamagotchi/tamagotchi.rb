@@ -83,7 +83,7 @@ class Tamagotchi
       @satiety -= (10 + index)
       @age += 2
     else
-      puts "error"
+      puts "Щоб обрати дію введіть число від 1 до 6"
     end
   end
 
