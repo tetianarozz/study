@@ -46,8 +46,10 @@ class Game
   end
 
   def start
+    cls
     index = ask_level
     pet.ask_name
+    cls
     show_stats
 
     while pet.live? do
@@ -55,11 +57,15 @@ class Game
 
       choice = choose_action(pet.name)
 
-      pet.update(choice, index) #+ змінна індекс
+      pet.update(choice, index)
+
 
       show_stats
+
+      cls
     end
 
+    cls
     show_stats
     pet.explain_death
   end

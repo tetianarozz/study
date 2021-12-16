@@ -22,8 +22,6 @@ class Tamagotchi
   end
 
   def show_statistics
-    cls
-
     puts "Вихованець: #{name.capitalize}
          \n           ｡◕‿◕｡\n
      Показники:
@@ -36,9 +34,10 @@ class Tamagotchi
 
   end
 
-  def update(choise, index)
-    case choise
+  def update(choice, index)
+    case choice
     when 1
+      puts "Гра пройшла чудово, #{name.capitalize} щасливий. Тепер не завадило б поїсти і прийняти ванну"
       @joyfulness = 100
       @health -= (10 + index)
       @cheerfulness -= (10 + index)
@@ -46,19 +45,20 @@ class Tamagotchi
       @hygiene -= (10 + index)
       @age += 1
     when 2
-      puts "#{name.capitalize} заблукав у лісі, повернувся додому через 3 дні брудний, стомлений та голодний :("
+      puts "Упс, #{name.capitalize} заблукав у лісі, повернувся додому через 3 дні брудний, стомлений та голодний :("
       @hygiene -= (30 + index)
       @satiety -= (30 + index)
       @cheerfulness -= (30 + index)
       @age += 3
     when 3
+      puts "#{name.capitalize} нарешті наївся і тепер хоче спати"
       @satiety = 100
       @health -= (10 + index)
-      @joyfulness -= (10 + index)
       @cheerfulness -= (10 + index)
       @hygiene -= (10 + index)
       @age += 1
     when 4
+      puts "Після гарячої ванни так хочеться спати..."
       @hygiene = 100
       @health -= (10 + index)
       @joyfulness -= (10 + index)
@@ -66,19 +66,20 @@ class Tamagotchi
       @satiety -= (10 + index)
       @age += 1
     when 5
+      puts "#{name.capitalize} виспався і готовий розважатись. Як щодо прогулянки? "
       @cheerfulness = 100
-      @health -= (10 + index)
       @joyfulness -= (10 + index)
       @satiety -= (10 + index)
       @hygiene -= (10 + index)
       @age += 1
     when 6
+      puts "#{name.capitalize} проводить у лікарні 2 дні. Процедури пішли на користь - #{name.capitalize} оздоровився,"\
+           " а заодно й виспався. \nТепер #{name.capitalize} хоче грати, адже в лікарні було дуже нудно..."
       @health = 100
       @joyfulness -= (10 + index)
-      @cheerfulness -= (10 + index)
       @satiety -= (10 + index)
-      @hygiene -= (10 + index)
-      @age += 1
+      @hygiene = 100
+      @age += 2
     else
       puts "error"
     end
