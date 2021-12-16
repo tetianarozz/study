@@ -57,8 +57,9 @@ class Game
 
       choice = choose_action(pet.name)
 
-      pet.update(choice, index)
+      cls
 
+      pet.update(choice, index)
 
       show_stats
 

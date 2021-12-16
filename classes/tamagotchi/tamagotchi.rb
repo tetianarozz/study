@@ -37,48 +37,50 @@ class Tamagotchi
   def update(choice, index)
     case choice
     when 1
-      puts "Гра пройшла чудово, #{name.capitalize} щасливий. Тепер не завадило б поїсти і прийняти ванну"
+      puts "Гра пройшла чудово, #{name.capitalize} щасливий. Тепер не завадило б поїсти і прийняти ванну \n"
       @joyfulness = 100
       @health -= (10 + index)
       @cheerfulness -= (10 + index)
-      @satiety -= (10 + index)
-      @hygiene -= (10 + index)
+      @satiety -= (20 + index)
+      @hygiene -= (20 + index)
       @age += 1
     when 2
-      puts "Упс, #{name.capitalize} заблукав у лісі, повернувся додому через 3 дні брудний, стомлений та голодний :("
+      puts "Упс, #{name.capitalize} заблукав у лісі, повернувся додому через 3 дні брудний, стомлений та голодний :(\n"
+      @joyfulness = 100
       @hygiene -= (30 + index)
       @satiety -= (30 + index)
       @cheerfulness -= (30 + index)
+      @health -= (30 + index)
       @age += 3
     when 3
-      puts "#{name.capitalize} нарешті наївся і тепер хоче спати"
+      puts "#{name.capitalize} нарешті наївся і тепер хоче спати :)\n"
       @satiety = 100
       @health -= (10 + index)
-      @cheerfulness -= (10 + index)
+      @cheerfulness -= (20 + index)
       @hygiene -= (10 + index)
       @age += 1
     when 4
-      puts "Після гарячої ванни так хочеться спати..."
+      puts "Після гарячої ванни так хочеться спати...\n"
       @hygiene = 100
-      @health -= (10 + index)
       @joyfulness -= (10 + index)
-      @cheerfulness -= (10 + index)
+      @cheerfulness -= (20 + index)
       @satiety -= (10 + index)
       @age += 1
     when 5
-      puts "#{name.capitalize} виспався і готовий розважатись. Як щодо прогулянки? "
+      puts "#{name.capitalize} виспався і готовий розважатись. Як щодо прогулянки?\n"
       @cheerfulness = 100
-      @joyfulness -= (10 + index)
+      @joyfulness -= (20 + index)
       @satiety -= (10 + index)
       @hygiene -= (10 + index)
       @age += 1
     when 6
       puts "#{name.capitalize} проводить у лікарні 2 дні. Процедури пішли на користь - #{name.capitalize} оздоровився,"\
-           " а заодно й виспався. \nТепер #{name.capitalize} хоче грати, адже в лікарні було дуже нудно..."
+           " а заодно й виспався. \nТепер #{name.capitalize} хоче грати, адже в лікарні було дуже нудно...\n"
       @health = 100
-      @joyfulness -= (10 + index)
-      @satiety -= (10 + index)
+      @cheerfulness = 100
       @hygiene = 100
+      @joyfulness -= (30 + index)
+      @satiety -= (10 + index)
       @age += 2
     else
       puts "error"
