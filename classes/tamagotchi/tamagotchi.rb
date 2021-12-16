@@ -16,6 +16,11 @@ class Tamagotchi
     @age = age
   end
 
+  def ask_name
+    puts "Введіть ім'я Вашого вихованця:"
+    @name = gets.chomp
+  end
+
   def show_statistics
     cls
 
@@ -27,18 +32,18 @@ class Tamagotchi
      Бадьорість: #{cheerfulness}
      Ситість: #{satiety}
      Гігієна: #{hygiene}
-     \nВік вихованця: #{@age} день"
+     \nВік вихованця: #{age} день"
 
   end
 
-  def update(choise)
+  def update(choise, index)
     case choise
     when 1 #Лікувати
       @health = 100
-      @joyfulness -= (10 - index)
-      @cheerfulness -= (10 - index)
-      @satiety -= (10 - index)
-      @hygiene -= (10 - index)
+      @joyfulness -= (10 + index)
+      @cheerfulness -= (10 + index)
+      @satiety -= (10 + index)
+      @hygiene -= (10 + index)
       @age += 1
     when 2 #Грати
       @joyfulness = 100

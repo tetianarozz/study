@@ -4,13 +4,13 @@ require_relative 'tamagotchi'
 class Game
   include Helper
 
-  attr_reader :pet
+  attr_accessor :pet
 
-  def initialize(pet)
-    @pet = pet
+  def initialize
+    @pet = Tamagotchi.new(nil, 100, 100, 100, 100, 100, 1)
   end
 
-  def ask_level(index)
+  def ask_level
     puts "Вітаємо у грі Тамагочі!
       \nОберіть рівень складності гри: \n
       1. Легкий
@@ -18,13 +18,14 @@ class Game
       3. Важкий "
 
     number = gets.to_i
+    index = nil
 
     until number.between?(1,3) do
       cls
 
       puts "Вітаємо у грі Тамагочі!
-      \nОберіть рівень складності гри:
-      \n1. Легкий
+      \nОберіть рівень складності гри:\n
+      1. Легкий
       2. Середній
       3. Важкий "
 
@@ -45,6 +46,8 @@ class Game
   end
 
   def start
+    index = ask_level
+    pet.ask_name
     show_stats
 
     while pet.live? do
@@ -52,7 +55,7 @@ class Game
 
       choice = choose_action(pet.name)
 
-      pet.update(choice)
+      pet.update(choice, index) #+ змінна індекс
 
       show_stats
     end
@@ -79,7 +82,7 @@ class Game
   def put_number
     puts "\nПродовжити гру - натисніть 'Enter'"
     gets.to_i
- end
+  end
 
   def show_stats
     pet.show_statistics
