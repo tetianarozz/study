@@ -38,46 +38,46 @@ class Tamagotchi
 
   def update(choise, index)
     case choise
-    when 1 #Лікувати
+    when 1
+      @joyfulness = 100
+      @health -= (10 + index)
+      @cheerfulness -= (10 + index)
+      @satiety -= (10 + index)
+      @hygiene -= (10 + index)
+      @age += 1
+    when 2
+      puts "#{name.capitalize} заблукав у лісі, повернувся додому через 3 дні брудний, стомлений та голодний :("
+      @hygiene -= (30 + index)
+      @satiety -= (30 + index)
+      @cheerfulness -= (30 + index)
+      @age += 3
+    when 3
+      @satiety = 100
+      @health -= (10 + index)
+      @joyfulness -= (10 + index)
+      @cheerfulness -= (10 + index)
+      @hygiene -= (10 + index)
+      @age += 1
+    when 4
+      @hygiene = 100
+      @health -= (10 + index)
+      @joyfulness -= (10 + index)
+      @cheerfulness -= (10 + index)
+      @satiety -= (10 + index)
+      @age += 1
+    when 5
+      @cheerfulness = 100
+      @health -= (10 + index)
+      @joyfulness -= (10 + index)
+      @satiety -= (10 + index)
+      @hygiene -= (10 + index)
+      @age += 1
+    when 6
       @health = 100
       @joyfulness -= (10 + index)
       @cheerfulness -= (10 + index)
       @satiety -= (10 + index)
       @hygiene -= (10 + index)
-      @age += 1
-    when 2 #Грати
-      @joyfulness = 100
-      @health -= 10
-      @cheerfulness -= 10
-      @satiety -= 10
-      @hygiene -= 10
-      @age += 1
-    when 3  #Вкласти спати
-      @cheerfulness = 100
-      @health -= 10
-      @joyfulness -= 10
-      @satiety -= 10
-      @hygiene -= 10
-      @age += 1
-    when 4  #Годувати
-      @satiety = 100
-      @health -= 10
-      @joyfulness -= 10
-      @cheerfulness -= 10
-      @hygiene -= 10
-      @age += 1
-    when 5  #Купати
-      @hygiene = 100
-      @health -= 10
-      @joyfulness -= 10
-      @cheerfulness -= 10
-      @satiety -= 10
-      @age += 1
-    when 6
-      puts "#{name.capitalize} заблукав у лісі, повернувся додому через 3 дні брудний, стомлений та голодний :("
-      @hygiene -= 30
-      @satiety -= 50
-      @cheerfulness -= 50
       @age += 1
     else
       puts "error"
