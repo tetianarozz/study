@@ -47,9 +47,13 @@ class Game
 
   def start
     cls
+
     index = ask_level
+
     pet.ask_name
+
     cls
+
     show_stats
 
     while pet.live? do
@@ -67,7 +71,9 @@ class Game
     end
 
     cls
+
     show_stats
+
     pet.explain_death
   end
 
