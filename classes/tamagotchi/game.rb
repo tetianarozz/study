@@ -1,8 +1,6 @@
-require_relative 'helper'
 require_relative 'tamagotchi'
 
 class Game
-  include Helper
 
   attr_accessor :pet
 
@@ -95,6 +93,10 @@ class Game
   def put_number
     puts "\nПродовжити гру - натисніть 'Enter'"
     gets.to_i
+  end
+
+  def cls
+    system('clear') || system('cls')
   end
 
   def show_stats

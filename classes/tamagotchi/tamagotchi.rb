@@ -100,7 +100,7 @@ class Tamagotchi
     elsif cheerfulness <= 0
       abort "Від недостачі сну #{name.capitalize} збожеволів і проведе
             решту днів у психлікарні :("
-    elsif age > 10
+    elsif age >= 10
       abort "#{name.capitalize} помер від старості :("
     else
       abort "#{name.capitalize} помер з невідомих причин :("
@@ -108,6 +108,6 @@ class Tamagotchi
   end
 
   def live?
-    health  > 0 && joyfulness > 0 && satiety > 0 && hygiene > 0 && cheerfulness > 0 && age < 10
+    health  > 0 && joyfulness > 0 && satiety > 0 && hygiene > 0 && cheerfulness > 0 && age <= 10
   end
 end
