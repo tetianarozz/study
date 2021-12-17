@@ -5,7 +5,7 @@ class Game
   attr_accessor :pet
 
   def initialize
-    @pet = Tamagotchi.new(name: nil, health: 100, joyfulness: 100, satiety: 100, hygiene: 100, cheerfulness: 100, age: 1)
+    @pet = Tamagotchi.new
   end
 
   def ask_level
