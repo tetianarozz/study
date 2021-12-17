@@ -1,8 +1,6 @@
-require_relative 'helper'
 require_relative 'game'
 
 class Tamagotchi
-  include Helper
 
   attr_accessor :name, :health, :joyfulness, :satiety, :hygiene, :cheerfulness, :age
 
@@ -37,7 +35,7 @@ class Tamagotchi
   def update(choice, index)
     case choice
     when 1
-      puts "Гра пройшла чудово, #{name.capitalize} щасливий. Тепер не завадило б поїсти і прийняти ванну \n "
+      puts "Гра пройшла чудово, #{name.capitalize} щасливий. Тепер не завадило б поїсти і прийняти ванну... \n "
       @joyfulness = 100
       @health -= (10 + index)
       @cheerfulness -= (10 + index)
@@ -75,7 +73,7 @@ class Tamagotchi
       @age += 1
     when 6
       puts "#{name.capitalize} проводить у лікарні 2 дні. Процедури пішли на користь - #{name.capitalize} оздоровився,"\
-           " а заодно й виспався. \nТепер #{name.capitalize} хоче грати, адже в лікарні було дуже нудно...\n "
+           " а заодно й виспався. \nТепер #{name.capitalize} хоче грати, адже в лікарні було дуууже нудно...\n "
       @health = 100
       @cheerfulness = 100
       @hygiene = 100
@@ -89,21 +87,27 @@ class Tamagotchi
 
   def explain_death
     if health <= 0
-      abort "#{name.capitalize} помер від хронічних хвороб :("
+      puts "#{name.capitalize} помер від хронічних хвороб :(\n
+               ¯＼_(Ò﹏Ó)_/¯ \n "
     elsif joyfulness <= 0
-      abort "#{name.capitalize} втік до інших господарів від нудьги :("
+      puts "#{name.capitalize} втік до інших господарів від нудьги :(\n
+               ¯＼_( ツ )_/¯ \n "
     elsif satiety <= 0
-      abort "#{name.capitalize} помер з голоду :("
+      puts "#{name.capitalize} помер з голоду :(\n
+               ¯＼_(⊙_◎)_/¯ \n "
     elsif hygiene <= 0
-      abort "Через неналежний догляд за #{name.capitalize} (відсутність гігієни)
-          його забрала інспекція по нагляду за неповнолітніми тамагочі :("
+      puts "Через неналежний догляд за #{name.capitalize} (відсутність гігієни)"\
+          "його забрала інспекція по нагляду за неповнолітніми тамагочі :(\n
+               ¯＼_(ツ)_/¯ \n "
     elsif cheerfulness <= 0
-      abort "Від недостачі сну #{name.capitalize} збожеволів і проведе
-            решту днів у психлікарні :("
+      puts "Від недостачі сну #{name.capitalize} збожеволів і проведе "\
+            "решту днів у психлікарні :(\n
+               ¯＼_(ツ)_/¯ \n "
     elsif age >= 10
-      abort "#{name.capitalize} помер від старості :("
+      puts "#{name.capitalize} помер від старості :(\n
+             ¯＼_(Ò﹏Ó)_/¯ \n "
     else
-      abort "#{name.capitalize} помер з невідомих причин :("
+      puts "#{name.capitalize} помер з невідомих причин :("
     end
   end
 

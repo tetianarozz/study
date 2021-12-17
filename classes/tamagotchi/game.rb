@@ -63,16 +63,17 @@ class Game
 
       pet.update(choice, index)
 
-      show_stats
+      show_stats if pet.live?
 
-      cls
     end
 
     cls
 
-    show_stats
-
     pet.explain_death
+
+    pet.show_statistics
+
+    exit
   end
 
   private
