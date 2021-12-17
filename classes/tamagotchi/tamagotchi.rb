@@ -5,13 +5,13 @@ class Tamagotchi
   attr_accessor :name, :health, :joyfulness, :satiety, :hygiene, :cheerfulness, :age
 
   def initialize(args = {})
-    @name = args[:name]
-    @health = args[:health] = 100
-    @joyfulness = args[:joyfulness] = 100
-    @satiety = args[:satiety] = 100
-    @hygiene = args[:hygiene] = 100
-    @cheerfulness = args[:cheerfulness] = 100
-    @age = args[:age] = 1
+    @name = args[:name] || nil
+    @health = args[:health] || 100
+    @joyfulness = args[:joyfulness] || 100
+    @satiety = args[:satiety] || 100
+    @hygiene = args[:hygiene] || 100
+    @cheerfulness = args[:cheerfulness] || 100
+    @age = args[:age] || 1
   end
 
   def ask_name
