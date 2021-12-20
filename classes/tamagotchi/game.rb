@@ -16,7 +16,6 @@ class Game
       3. Важкий "
 
     number = gets.to_i
-    index = nil
 
     until number.between?(1,3) do
       cls
@@ -29,6 +28,11 @@ class Game
 
       number = gets.to_i
     end
+    number
+  end
+
+  def indicate_index(number)
+    index = nil
 
     case number
     when 1
@@ -46,7 +50,9 @@ class Game
   def start
     cls
 
-    index = ask_level
+    number = ask_level
+
+    index = indicate_index(number)
 
     pet.ask_name
 
