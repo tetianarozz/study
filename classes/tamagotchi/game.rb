@@ -46,36 +46,27 @@ class Game
 
   def start
     cls
-
     number = ask_level
 
     index = indicate_index(number)
 
     pet.ask_name
-
     cls
-
     show_stats
 
     while pet.live? do
       cls
-
       choice = choose_action(pet.name)
 
       cls
-
       pet.update(choice, index)
 
       show_stats if pet.live?
-
     end
 
     cls
-
     pet.explain_death
-
     pet.show_statistics
-
     exit
   end
 
