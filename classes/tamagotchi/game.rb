@@ -5,6 +5,34 @@ class Game
     @pet = pet
   end
 
+  def start
+    cls
+    number = ask_level
+
+    index = indicate_index(number)
+
+    pet.ask_name
+    cls
+    show_stats
+
+    while pet.live? do
+      cls
+      choice = choose_action(pet.name)
+
+      cls
+      pet.update(choice, index)
+
+      show_stats if pet.live?
+    end
+
+    cls
+    pet.explain_death
+    pet.show_statistics
+    exit
+  end
+
+  private
+
   def ask_level
     puts "Вітаємо у грі Тамагочі!
       \nОберіть рівень складності гри: \n
@@ -43,34 +71,6 @@ class Game
     end
     index
   end
-
-  def start
-    cls
-    number = ask_level
-
-    index = indicate_index(number)
-
-    pet.ask_name
-    cls
-    show_stats
-
-    while pet.live? do
-      cls
-      choice = choose_action(pet.name)
-
-      cls
-      pet.update(choice, index)
-
-      show_stats if pet.live?
-    end
-
-    cls
-    pet.explain_death
-    pet.show_statistics
-    exit
-  end
-
-  private
 
   def choose_action(name)
     puts "Оберіть дію для #{name.capitalize}:
