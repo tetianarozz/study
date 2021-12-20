@@ -1,5 +1,3 @@
-require_relative 'tamagotchi'
-
 class Game
 
   attr_accessor :pet
