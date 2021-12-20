@@ -1,7 +1,6 @@
 require_relative 'game'
 
 class Tamagotchi
-
   attr_accessor :name, :health, :joyfulness, :satiety, :hygiene, :cheerfulness, :age
 
   def initialize(args = {})

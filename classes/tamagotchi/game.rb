@@ -1,5 +1,4 @@
 class Game
-
   attr_accessor :pet
 
   def initialize(pet)
