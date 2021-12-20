@@ -1,3 +1,5 @@
 require_relative 'game'
 
-Game.new.start
+my_pet = Tamagotchi.new
+
+Game.new(my_pet).start

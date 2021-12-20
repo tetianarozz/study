@@ -4,8 +4,8 @@ class Game
 
   attr_accessor :pet
 
-  def initialize
-    @pet = Tamagotchi.new
+  def initialize(pet)
+    @pet = pet
   end
 
   def ask_level
